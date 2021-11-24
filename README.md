@@ -7,8 +7,8 @@ A library to create somewhat nice-looking terminal progress bars.
 Everything is a mess.
 
 - [x] Cargo style prog bar
-- [] Apt style prog bar
-- [] Catch SIGINT
+- [ ] Apt style prog bar
+- [ ] Catch SIGINT
 
 
 ## Documentation
