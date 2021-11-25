@@ -28,7 +28,7 @@ impl CargoProgressBar {
 
 	pub fn draw(&mut self) {
 		let tail_length = (self.curr_val as f32 / self.max_range as f32 * (self.length-3) as f32).floor() as u32;
-		let bar_string: String = format!("\r|{}>{}| {}\x1b[K", "=".repeat(tail_length as usize), " ".repeat((self.length-tail_length-3) as usize), self.curr_val);
+		let bar_string: String = format!("\r|{}>{}| {}/{}\x1b[K", "=".repeat(tail_length as usize), " ".repeat((self.length-tail_length-3) as usize), self.curr_val, self.max_range);
 		print!("{}", bar_string);
 		std::io::stdout().flush().unwrap();		
 	}

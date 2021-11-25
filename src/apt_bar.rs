@@ -3,6 +3,7 @@ use terminal_size::{terminal_size, Height, Width};
 use std::io::Write;
 use crate::errors;
 
+#[derive(Copy, Clone)]
 pub struct AptProgressBar {
 	length: u32,
 	max_range: u32,
@@ -27,8 +28,9 @@ impl AptProgressBar {
 		}
 	}
 
-	pub fn init(&mut self) -> Result<(), errors::ProgBarError> {
+	pub fn init() -> Result<(), errors::ProgBarError> {
 		let (w, h) = AptProgressBar::get_term_size()?;
+		
 		print!("\x1b[s");
 		print!("\x1b[0;{}r]", h-1);
 		print!("\x1b[u");
@@ -38,7 +40,7 @@ impl AptProgressBar {
 	}
 
 	pub fn draw(&mut self) -> Result<(), errors::ProgBarError> {
-		let (w, h) = AptProgressBar::get_term_size()?;
+		let (w, h): (u16, u16) = AptProgressBar::get_term_size()?;
 		let complete_length: u32 = ((self.curr_val as f32 / self.max_range as f32 * (self.length - 2) as f32).floor()) as u32;
 		
 		print!("\x1b[s");
@@ -62,7 +64,7 @@ impl AptProgressBar {
 		Err(errors::ProgBarError::TermSizeUnknown)		
 	}
 		
-	pub fn cleanup(&mut self) -> Result<(), errors::ProgBarError> {
+	pub fn cleanup() -> Result<(), errors::ProgBarError> {
 		let (w, h) = AptProgressBar::get_term_size()?;
 		
 		print!("\x1b[s");

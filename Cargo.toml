@@ -6,3 +6,4 @@ edition = "2018"
 
 [dependencies]
 terminal_size = "0.1.17"
+colored = "2"

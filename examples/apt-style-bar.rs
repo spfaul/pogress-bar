@@ -1,16 +1,24 @@
 use std::{thread, time};
-use pogress_bar::apt_bar;
+use colored::*;
+use pogress_bar::apt_bar::AptProgressBar;
 
 fn main() {
-	let mut bar = apt_bar::AptProgressBar::new(15, 10);
-	bar.init().unwrap();
-	println!(""); // ensure bar is visible
+	print!("\x1b[?25l"); // hide cursor
+
+	let mut bar = AptProgressBar::new(15, 10);
+	AptProgressBar::init().unwrap();
+	
+	// ensure apt bar is visible at the bottom 
+	println!("");
+	
 	for num in 0..=10 {
 		if num == 8 {
-			println!("This is some info!"); // note that escape codes are not needed
+			println!("{}", "This is some info!".blue().bold()); // note that escape codes are not needed
 		}
 		bar.update(num).unwrap();
 		thread::sleep(time::Duration::from_millis(100));
 	}
-	bar.cleanup().unwrap();
+	AptProgressBar::cleanup().unwrap();
+
+	print!("\x1b[?25h"); // show cursor
 }
