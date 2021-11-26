@@ -8,11 +8,11 @@ Everything is a mess - NOTHING IS STABLE.
 
 - [x] Cargo style prog bar
 - [x] Apt style prog bar
-- [] Catch SIGINT
+- [x] Multiple prog bars
 
 
 ## Documentation
-[lib.rs](https://lib.rs) page: TBD
+TBD
 
 
 ## Usage
