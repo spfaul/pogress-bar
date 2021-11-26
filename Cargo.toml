@@ -8,7 +8,7 @@ license = "MIT"
 version = "0.1.0"
 edition = "2018"
 categories = ["command-line-interface"]
-keywords = ["cli", "progress", "progress bar", "terminal"]
+keywords = ["cli", "progress", "progress-bar", "terminal"]
 
 
 [dependencies]
