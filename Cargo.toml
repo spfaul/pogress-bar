@@ -1,7 +1,14 @@
 [package]
 name = "pogress-bar"
+author = ["t0a5ted"]
+description = "Display and use popular terminal progress bars (APT, Cargo, etc.)"
+readme = "README.md"
+repository = "https://github.com/t0a5ted/pogress-bar"
+license = "MIT"
 version = "0.1.0"
 edition = "2018"
+categories = ["command-line-interface"]
+keywords = ["cli", "progress", "progress bar", "terminal"]
 
 
 [dependencies]
