@@ -1,7 +1,6 @@
 #![allow(dead_code, unused_variables)]
 use std::io::Write;
-use crate::errors;
-use crate::progress_bar::ProgressBar;
+use crate::{errors, ProgressBar};
 
 pub struct CargoProgressBar {
 	length: u32,
@@ -36,9 +35,4 @@ impl ProgressBar for CargoProgressBar {
 		Ok(())
 	}
 
-	fn update(&mut self, new_val: u32) -> Result<(), errors::ProgBarError> {
-		self.set_value(new_val)?;
-		self.draw()?;
-		Ok(())
-	}
 }

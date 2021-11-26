@@ -1,8 +1,7 @@
 #![allow(dead_code, unused_variables)]
 use std::io::Write;
 use colored::*;
-use crate::errors;
-use crate::progress_bar::ProgressBar;
+use crate::{errors, ProgressBar};
 
 #[derive(Copy, Clone, Debug)]
 pub struct ChalkProgressBar {

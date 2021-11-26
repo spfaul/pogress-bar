@@ -2,8 +2,7 @@
 use terminal_size::{terminal_size, Height, Width};
 use std::io::Write;
 use colored::*;
-use crate::errors;
-use crate::progress_bar::ProgressBar;
+use crate::{errors, ProgressBar};
 
 #[derive(Debug, Copy, Clone)]
 pub struct AptProgressBar {
