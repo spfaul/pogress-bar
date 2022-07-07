@@ -50,6 +50,7 @@ impl ChalkProgressBarGroup {
 	pub fn update(&mut self, idx: usize, val: u32) {
 		self.move_cursor_down(idx as i16 - self.curs_pos);
 		self.bars[idx].update(val).unwrap();
+		self.move_cursor_down(self.bars.len() as i16 - self.curs_pos);
 	}
 
 	pub fn move_cursor_down(&mut self, lines: i16) {
